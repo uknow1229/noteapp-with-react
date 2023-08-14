@@ -1,4 +1,5 @@
 import './Sidebar.css';
+import PropTypes from 'prop-types';
 
 const Sidebar = ({
   onAddNote,
@@ -38,4 +39,18 @@ const Sidebar = ({
   );
 };
 
+Sidebar.propTypes = {
+  onAddNote: PropTypes.func.isRequired,
+  notes: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired,
+      modDate: PropTypes.number.isRequired, // Assuming modDate is a timestamp
+    })
+  ).isRequired,
+  onDeleteNote: PropTypes.func.isRequired,
+  activeNote: PropTypes.string.isRequired,
+  setActiveNote: PropTypes.func.isRequired,
+};
 export default Sidebar;

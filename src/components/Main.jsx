@@ -1,4 +1,6 @@
 import './Main.css';
+import PropTypes from 'prop-types';
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 
 const Main = ({ activeNote, onUpdateNote }) => {
   const onEditNote = (key, value) => {
@@ -29,10 +31,21 @@ const Main = ({ activeNote, onUpdateNote }) => {
       </div>
       <div className="app-main-note-preview">
         <h1 className="preview-title">{activeNote.title}</h1>
-        <div className="markdown-preview">{activeNote.content}</div>
+        <ReactMarkdown className="markdown-preview">
+          {activeNote.content}
+        </ReactMarkdown>
       </div>
     </div>
   );
+};
+
+Main.propTypes = {
+  activeNote: PropTypes.shape({
+    title: PropTypes.string,
+    content: PropTypes.string,
+    modDate: PropTypes.number, // assuming it's a timestamp
+  }),
+  onUpdateNote: PropTypes.func.isRequired,
 };
 
 export default Main;
