@@ -1,3 +1,7 @@
+
+<img width="1580" alt="スクリーンショット 2023-08-14 14 19 17" src="https://github.com/uknow1229/noteapp-with-react/assets/86299044/fbc92768-3b50-48b8-bd21-5ff0d05194e8">
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
