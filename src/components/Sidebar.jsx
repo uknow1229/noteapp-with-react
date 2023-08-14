@@ -25,12 +25,12 @@ const Sidebar = ({
               <button onClick={() => onDeleteNote(note.id)}>削除</button>
             </div>
             <p>{note.content}</p>
-            <smaall>
+            <small>
               {new Date(note.modDate).toLocaleDateString('ja-JP', {
                 hour: '2-digit',
                 minute: '2-digit',
               })}
-            </smaall>
+            </small>
           </div>
         ))}
       </div>
